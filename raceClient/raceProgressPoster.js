@@ -3,9 +3,11 @@ var fs = require("fs");
 
 var HOME = process.env['HOME'];
 var fileName = HOME + '/race/results.txt';
-var racerNum = 'racer1';
+var racerNum = process.argv[2];
 var percentage = 0;
 var opions = {};
+
+console.log('racer Num is ' + racerNum);
 
 fs.watchFile(fileName, function(curr, prev) {
   //call another funtion that parses and sets perentage
