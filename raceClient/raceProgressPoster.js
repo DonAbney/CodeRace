@@ -17,6 +17,15 @@ fs.watchFile(fileName, function(curr, prev) {
 
 var parseFile = function(fileName) {
   var number = 0;
+  fs.readFile(fileName, function(err, data) {
+    if (err) {
+      return console.error(err);
+    }
+    var lines = data.toString().trim().split('\n');
+    var lastLine = lines.slice(-1)[0];
+
+    console.log(lastLine);
+  });
 
   setPercentage(number);
 }
