@@ -7,13 +7,17 @@ var racerNum = process.argv[2];
 var percentage = 0;
 var opions = {};
 
-console.log('racer Num is ' + racerNum);
+if(racerNum == null) {
+  console.log('Please enter a racer number');
+} else {
+  console.log('Race progress started with racer num ' + racerNum);
 
-fs.watchFile(fileName, function(curr, prev) {
-  //call another funtion that parses and sets perentage
-  parseFile(fileName, setOptions);
-  //manage file size or just delete it
-});
+  fs.watchFile(fileName, function(curr, prev) {
+    //call another funtion that parses and sets perentage
+    parseFile(fileName, setOptions);
+    //manage file size or just delete it
+  });
+}
 
 var parseFile = function(fileName, stuff) {
   fs.readFile(fileName, function(err, data) {
@@ -26,11 +30,7 @@ var parseFile = function(fileName, stuff) {
     var denomenator = tokens[9] ;
     var numerator = denomenator - tokens[10].slice(1);
 
-    console.log(denomenator);
-    console.log(numerator);
-
     var number = (numerator / denomenator) * 100;
-    console.log("Value = " + number);
     setPercentage(number);
     stuff();
   });
