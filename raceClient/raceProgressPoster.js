@@ -8,26 +8,30 @@ var opions = {};
 
 fs.watchFile(fileName, function(curr, prev) {
   //call another funtion that parses and sets perentage
-  parseFile(fileName);
-  //call a thing that PUTS
-  setOptions();
-  http.request(options, callback).end();
+  parseFile(fileName, setOptions);
+
   //manage file size or just delete it
 });
 
-var parseFile = function(fileName) {
-  var number = 0;
+var parseFile = function(fileName, stuff) {
   fs.readFile(fileName, function(err, data) {
     if (err) {
       return console.error(err);
     }
     var lines = data.toString().trim().split('\n');
     var lastLine = lines.slice(-1)[0];
+    var tokens = lastLine.split(" ")
+    var denomenator = tokens[9] ;
+    var numerator = denomenator - tokens[10].slice(1);
 
-    console.log(lastLine);
+    console.log(denomenator);
+    console.log(numerator);
+
+    var number = (numerator / denomenator) * 100;
+    console.log("Value = " + number);
+    setPercentage(number);
+    stuff();
   });
-
-  setPercentage(number);
 }
 
 var setOptions = function() {
@@ -37,6 +41,7 @@ var setOptions = function() {
     port: 8081,
     method: 'PUT'
   };
+  http.request(options, callback).end();
 }
 
 var setPercentage = function(inPercent) {
