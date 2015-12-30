@@ -1,7 +1,8 @@
 var http = require('http');
 var fs = require("fs");
 
-var fileName = '~/race/results.txt';
+var HOME = process.env['HOME'];
+var fileName = HOME + '/race/results.txt';
 var racerNum = 'racer1';
 var percentage = 0;
 var opions = {};
@@ -9,7 +10,6 @@ var opions = {};
 fs.watchFile(fileName, function(curr, prev) {
   //call another funtion that parses and sets perentage
   parseFile(fileName, setOptions);
-
   //manage file size or just delete it
 });
 
