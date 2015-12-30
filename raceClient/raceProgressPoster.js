@@ -4,32 +4,35 @@ var fs = require("fs");
 var fileName = 'results.txt';
 var racerNum = 'racer1';
 var percentage = 0;
+var opions = {};
 
 fs.watchFile(fileName, function(curr, prev) {
-  //call another funtion that parses
+  //call another funtion that parses and sets perentage
   parseFile(fileName);
   //call a thing that PUTS
-  var options = {
-    host: '192.168.128.109',
-    path: '/percent/' + racerNum + '/' + percentage,
-    port: 8081,
-    method: 'PUT'
-  };
+  setOptions();
   http.request(options, callback).end();
   //manage file size or just delete it
 });
 
 var parseFile = function(fileName) {
-  var number;
+  var number = 0;
 
   setPercentage(number);
+}
+
+var setOptions = function() {
+  options = {
+    host: '192.168.128.109',
+    path: '/percent/' + racerNum + '/' + percentage,
+    port: 8081,
+    method: 'PUT'
+  };
 }
 
 var setPercentage = function(inPercent) {
   percentage = inPercent;
 }
-
-
 
 var callback = function(response) {
   var str = '';
