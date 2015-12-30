@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require("fs");
 
-var fileName = 'results.txt';
+var fileName = '~/race/results.txt';
 var racerNum = 'racer1';
 var percentage = 0;
 var opions = {};
