@@ -1,14 +1,35 @@
 var http = require('http');
+var fs = require("fs");
 
+var fileName = 'results.txt';
 var racerNum = 'racer1';
-var percentage = 22;
+var percentage = 0;
 
-var options = {
-  host: '192.168.128.109',
-  path: '/percent/' + racerNum + '/' + percentage,
-  port: 8081,
-  method: 'PUT'
-};
+fs.watchFile(fileName, function(curr, prev) {
+  //call another funtion that parses
+  parseFile(fileName);
+  //call a thing that PUTS
+  var options = {
+    host: '192.168.128.109',
+    path: '/percent/' + racerNum + '/' + percentage,
+    port: 8081,
+    method: 'PUT'
+  };
+  http.request(options, callback).end();
+  //manage file size or just delete it
+});
+
+var parseFile = function(fileName) {
+  var number;
+
+  setPercentage(number);
+}
+
+var setPercentage = function(inPercent) {
+  percentage = inPercent;
+}
+
+
 
 var callback = function(response) {
   var str = '';
@@ -23,5 +44,3 @@ var callback = function(response) {
     console.log(str);
   });
 };
-
-http.request(options, callback).end();
