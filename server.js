@@ -11,7 +11,7 @@ app.get('/dashboard', function (req, res) {
 app.put('/percent/:racer/:percentage', function (req, res) {
    fs.readFile( __dirname + "/" + "race.json", 'utf8', function (err, data) {
        data = JSON.parse( data);
-       console.log('PUT Update');
+//       console.log('PUT Update');
        data[req.params.racer].percent = req.params.percentage
        
        fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(data), function () {
