@@ -31,7 +31,7 @@ var parseFile = function(fileName, stuff) {
     var numerator = denomenator - tokens[10].slice(1);
 
     var number = (numerator / denomenator) * 100;
-    setPercentage(number);
+    setPercentage(Math.floor(number));
     stuff();
   });
 }
