@@ -5,8 +5,8 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.13.3"
+    "body-parser": "^1.14.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "test",
     "start": "node server.js"

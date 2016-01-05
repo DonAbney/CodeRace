@@ -1,8 +1,11 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
+var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/dashboard', function (req, res) {
    res.sendfile('race.html');
@@ -10,6 +13,22 @@ app.get('/dashboard', function (req, res) {
 
 app.get('/signup', function (req, res) {
    res.sendfile('signup.html');
+})
+
+app.post('/submit_signup', function (req, res) {
+
+   var person = JSON.stringify({racer: {name: req.body.name, email: req.body.email}});
+   fs.appendFile(__dirname + "/" + "participants.json", person, function() {
+
+      fs.readFile( __dirname + "/" + "race.json", 'utf8', function (err, data) {
+          data = JSON.parse( data);
+          data[req.body.racer].name = req.body.name
+       
+          fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(data), function () {
+            res.end('Update complete');
+          });
+       });
+   });
 })
 
 app.put('/percent/:racer/:percentage', function (req, res) {
