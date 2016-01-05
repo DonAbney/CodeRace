@@ -8,6 +8,10 @@ app.get('/dashboard', function (req, res) {
    res.sendfile('race.html');
 })
 
+app.get('/signup', function (req, res) {
+   res.sendfile('signup.html');
+})
+
 app.put('/percent/:racer/:percentage', function (req, res) {
    fs.readFile( __dirname + "/" + "race.json", 'utf8', function (err, data) {
        data = JSON.parse( data);
