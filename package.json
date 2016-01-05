@@ -1,0 +1,24 @@
+{
+  "name": "code-race",
+  "version": "1.0.0",
+  "description": "For CodeMash",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonAbney/CodeRace.git"
+  },
+  "author": "Pillar Technology",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DonAbney/CodeRace/issues"
+  },
+  "homepage": "https://github.com/DonAbney/CodeRace#readme"
+}
