@@ -29,6 +29,22 @@ body {
     background: linear-gradient(to top right, yellow, green);
 }
 
+.low {
+    background: linear-gradient(to top right, yellow, red);
+}
+
+.laneLight {
+    height: 150px;
+    width: 100%;
+    background-color: #cdc9c9;
+}
+
+.laneDark {
+    height: 150px;
+    width: 100%;
+    background-color: #cdc0b0;
+}
+
 @keyframes pulse {
     0% {background: radial-gradient(at 0%, yellow, green 90%);}  
     5% {background: radial-gradient(at 5%, yellow, green 90%);}  
@@ -51,16 +67,4 @@ body {
     90% {background: radial-gradient(at 90%, yellow, green 90%);}  
     95% {background: radial-gradient(at 95%, yellow, green 90%);}  
     100% {background: radial-gradient(at 100%, yellow, green 90%);}
-}
-
-.laneLight {
-    height: 150px;
-    width: 100%;
-    background-color: #8B4513;
-}
-
-.laneDark {
-    height: 150px;
-    width: 100%;
-    background-color: #D2691E;
 }
