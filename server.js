@@ -22,7 +22,7 @@ app.post('/submit_signup', function (req, res) {
 
       fs.readFile( __dirname + "/" + "race.json", 'utf8', function (err, data) {
           data = JSON.parse( data);
-          data[req.body.racer].name = req.body.name
+          data[req.body.racer].name = req.body.screenName;
        
           fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(data), function () {
             res.end('Update complete');

@@ -16,27 +16,13 @@ $(document).ready(function() {
 
 	if (percWidth < 30) {
 	  percWidth = 30;
-	  $('#' + index).addClass('low');
-	} else {
-	  $('#' + index).removeClass('low');
-	}
+	} 
 
 	$("#" + index).text(racer.name + ' ' + percComplete + '%');
-        $('#' + index).width(percWidth + '%');
-	$('#' + index).removeClass('leader');
+        $('#' + index + 'cover').css('left', percWidth + '%');
 	
-	if (percWidth > leaderWidth) {
-		leaders = [index];
-		leaderWidth = percWidth;
-	} else if (percWidth == leaderWidth) {
-		leaders.push(index);
-	}
-
       });
 
-	$.each(leaders, function(index, leader) {
-		$('#' + leader).addClass('leader');
-	});
     });
   }
 });
