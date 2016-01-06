@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <title>Kata Race Signup Form</title>
+  <link href="/css/global.css" rel="stylesheet" type="text/css" />
+  <link href="/css/signup.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <div>
+    <img id="coderace-title-img" src="/img/coderace-title.png" />
+  </div>
+  <div class="form_data">
+    <form name="signup" action="http://192.168.128.109:8081/submit_signup" method="post">
+      <br>
+      <input class="text_box" type="text" name="name" placeholder="NAME" required>
+      <input class="text_box" type="text" name="email" placeholder="EMAIL" required>
+      <input class="text_box" type="text" name="screenName" placeholder="SCREEN NAME" maxlength="10" required>
+
+      <input class="text_box" type="text" name="racer" value="racer3" hidden>
+      <br>
+      <br>
+      <button type="submit" style="border: 0; background: transparent; margin: 0px 3px 0px 0px">
+        <img id="submit-button-img" src="/img/submit.png" alt="submit" />
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>

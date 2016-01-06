@@ -11,8 +11,8 @@ app.get('/dashboard', function (req, res) {
    res.sendfile('race.html');
 })
 
-app.get('/signup', function (req, res) {
-   res.sendfile('signup.html');
+app.get('/signup/:racer', function (req, res) {
+   res.sendfile('signup' + req.params.racer + '.html');
 })
 
 app.post('/submit_signup', function (req, res) {
