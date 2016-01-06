@@ -30,11 +30,15 @@ body {
 }
 
 .header {
-    height: 110px;
+    height: 160px;
     width: 100%;
     padding: 40px 0 20px 0;
     font-size: 45px;
     color: white;
+}
+
+.header img {
+    height: 100%;
 }
 
 .lane {
