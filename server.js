@@ -25,7 +25,7 @@ app.post('/submit_signup', function (req, res) {
           data[req.body.racer].name = req.body.screenName;
        
           fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(data), function () {
-            res.end('Update complete');
+            res.sendfile('success.html');
           });
        });
    });

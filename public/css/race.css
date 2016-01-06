@@ -41,6 +41,14 @@ body {
     height: 100%;
 }
 
+.footer {
+    height: 150px;
+    width: 100%;
+    padding: 40px 0 20px 0;
+    font-size: 45px;
+    color: white;
+}
+
 .lane {
     height: 150px;
     width: 100%;

@@ -7,3 +7,10 @@
   width: 800px;
   margin: 100px 0px 80px 0px
 }
+
+.content {
+  font-family: Arial;
+  font-size: 45px;
+  color: white;
+  text-align: center;
+}

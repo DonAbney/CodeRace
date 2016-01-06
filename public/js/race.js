@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   function refreshRace() {
     $.ajax({
-      url: "http://127.0.0.1:8081/status",
+      url: "http://192.168.1.102:8081/status",
       crossDomain: true
     }).then(function(data) {
       var leaders = [];
