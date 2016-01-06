@@ -20,6 +20,7 @@ $(document).ready(function() {
 
 	$("#" + index).text(racer.name + ' ' + percComplete + '%');
         $('#' + index + 'cover').css('left', percWidth + '%');
+        $('#' + index + 'cover').width((100 - percWidth) + '%');
 	
       });
 
