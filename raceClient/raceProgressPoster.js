@@ -26,19 +26,21 @@ var parseFile = function(fileName, stuff) {
     }
     var lines = data.toString().trim().split('\n');
     var lastLine = lines.slice(-1)[0];
-    var tokens = lastLine.split(" ")
+    var tokens = lastLine.split(" ");
+    if (tokens.length > 9) {
     var denomenator = tokens[9] ;
     var numerator = denomenator - tokens[10].slice(1);
 
     var number = (numerator / denomenator) * 100;
     setPercentage(Math.floor(number));
     stuff();
+  }
   });
 }
 
 var setOptions = function() {
   options = {
-    host: '192.168.128.109',
+    host: '192.168.1.102',
     path: '/percent/' + racerNum + '/' + percentage,
     port: 8081,
     method: 'PUT'
