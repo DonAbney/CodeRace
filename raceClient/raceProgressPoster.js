@@ -28,10 +28,15 @@ var parseFile = function(fileName, stuff) {
     var lastLine = lines.slice(-1)[0];
     var tokens = lastLine.split(" ");
     if (tokens.length > 9) {
-    var denomenator = tokens[9] ;
-    var numerator = denomenator - tokens[10].slice(1);
-
-    var number = (numerator / denomenator) * 100;
+      var number;
+      if(tokens[10] == 'SUCCESS'){
+        number = 100
+      }
+      else{
+        var denomenator = tokens[9] ;
+        var numerator = denomenator - tokens[10].slice(1);
+        number = (numerator / denomenator) * 100;
+      }
     setPercentage(Math.floor(number));
     stuff();
   }
