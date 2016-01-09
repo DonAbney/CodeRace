@@ -2,14 +2,14 @@
   "name": "code-race",
   "version": "1.0.0",
   "description": "For CodeMash",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.13.3",
     "body-parser": "^1.14.2"
   },
   "scripts": {
     "test": "jasmine-node --autotest tests controllers --color",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
