@@ -8,7 +8,7 @@
     "body-parser": "^1.14.2"
   },
   "scripts": {
-    "test": "test",
+    "test": "jasmine-node --autotest tests controllers --color",
     "start": "node server.js"
   },
   "repository": {
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/DonAbney/CodeRace/issues"
   },
-  "homepage": "https://github.com/DonAbney/CodeRace#readme"
+  "homepage": "https://github.com/DonAbney/CodeRace#readme",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "jasmine-node": "^1.14.5"
+  }
 }
