@@ -1,5 +1,5 @@
 /* GET leaderboard listing. */
-function getLeaderboard(req, res) {
+function getSignup(req, res) {
   var options = {
     root: './',
     dotfiles: 'deny',
@@ -9,7 +9,7 @@ function getLeaderboard(req, res) {
     }
   };
 
-  res.sendFile('race.html', options);
+  res.sendFile('signup.html', options);
 }
 
-module.exports = getLeaderboard;
+module.exports = getSignup;

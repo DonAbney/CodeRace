@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var getLeaderboard = require('./getLeaderboard');
+var getSignup = require('./getSignup');
 
-router.get('/', getLeaderboard);
+router.get('/', getSignup);
 
 module.exports = router;

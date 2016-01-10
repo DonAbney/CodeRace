@@ -1,4 +1,3 @@
-var http = require('http');
 var getLeaderboard = require('../../controllers/getLeaderboard');
 
 describe('Leaderboard: ', function() {
@@ -8,12 +7,12 @@ describe('Leaderboard: ', function() {
     it('replies to requests with the leaderboard page', function(){
       var req,res,spy;
       req = {};
-      res = {sendfile: function(){}};
-      spyOn(res, 'sendfile');
+      res = {sendFile: function(){}};
+      spyOn(res, 'sendFile');
 
       getLeaderboard(req, res);
 
-      expect(res.sendfile).toHaveBeenCalledWith('race.html');
+      expect(res.sendFile).toHaveBeenCalledWith('race.html', jasmine.any(Object));
     });
 
   });
