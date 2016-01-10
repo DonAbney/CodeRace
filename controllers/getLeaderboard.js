@@ -1,7 +1,7 @@
 /* GET leaderboard listing. */
 function getLeaderboard(req, res) {
   var options = {
-    root: './',
+    root: './views/',
     dotfiles: 'deny',
     headers: {
         'x-timestamp': Date.now(),
