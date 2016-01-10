@@ -4,8 +4,8 @@ function getSignup(req, res) {
     root: './views/',
     dotfiles: 'deny',
     headers: {
-        'x-timestamp': Date.now(),
-        'x-sent': true
+      'x-timestamp': Date.now(),
+      'x-sent': true
     }
   };
 
