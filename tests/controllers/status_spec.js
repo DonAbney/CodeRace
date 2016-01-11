@@ -6,13 +6,13 @@ describe('Status: ', function() {
 
     it('replies to requests with the race status data', function(){
       var req,res,spy;
-      req = {};
-      res = {end: function(){}};
-      spyOn(res, 'end');
+      req = res = {};
+      Race = require('../../models/race');
+      spyOn(Race, 'getStatus');
 
       getStatus(req, res);
 
-      expect(res.end).toHaveBeenCalledWith(jasmine.any(Object));
+      expect(Race.getStatus).toHaveBeenCalledWith(jasmine.any(Function));
     });
 
   });

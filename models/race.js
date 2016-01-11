@@ -1,6 +1,12 @@
 var fs = require("fs");
 
 exports.getStatus = function(callback){
-  //go get some data
-  callback(null,{});
+
+  var fileName = __dirname + '/race.json';
+
+  fs.readFile( fileName, 'utf8', function (err, data) {
+    data = JSON.parse( data );
+    callback(null,{});
+  });
+
 };
