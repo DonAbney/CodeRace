@@ -1,1 +1,22 @@
-{"racer1":{"percent":"1","name":"THE MAN"},"racer2":{"percent":"90","name":"modulus"},"racer3":{"percent":"0","name":"numthree"},"racer4":{"percent":"0","name":"numfour"},"racer5":{"percent":"40","name":"fastfiveag"}}
+{
+  "racer1": {
+    "percent": "1",
+    "name": "THE MAN"
+  },
+  "racer2": {
+    "percent": "90",
+    "name": "modulus"
+  },
+  "racer3": {
+    "percent": "0",
+    "name": "numthree"
+  },
+  "racer4": {
+    "percent": "0",
+    "name": "numfour"
+  },
+  "racer5": {
+    "percent": "40",
+    "name": "fastfiveag"
+  }
+}
