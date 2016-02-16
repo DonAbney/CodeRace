@@ -1,4 +1,4 @@
-function doSignup(req, res) {
+function submitSignup(req, res) {
   var options = {
     root: './views/',
     dotfiles: 'deny',

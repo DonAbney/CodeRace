@@ -25,7 +25,7 @@ describe('Signup: ', function() {
       res = {sendFile: function(){}};
       spyOn(res, 'sendFile');
 
-      doSignup(req, res);
+      submitSignup(req, res);
 
       expect(res.sendFile).toHaveBeenCalledWith('success.html', jasmine.any(Object));
     });
