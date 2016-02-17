@@ -21,13 +21,26 @@ describe('Signup: ', function() {
   describe('submit', function() {
     it('replies to request with the success page', function() {
       var req, res, spy;
-      req = {};
+      req = {"body":{"name":"numfiver","email":"five@email2"}};
       res = {sendFile: function(){}};
       spyOn(res, 'sendFile');
 
       submitSignup(req, res);
 
       expect(res.sendFile).toHaveBeenCalledWith('success.html', jasmine.any(Object));
+    });
+
+    it('appends racer data to the participants file', function(){
+      var req, res, spy;
+      fs = require('fs');
+      req = {"body":{"name":"numfiver","email":"five@email2"}};
+      res = {sendFile: function(){}};
+      spyOn(fs, 'appendFile');
+
+      submitSignup(req, res);
+
+      expect(fs.appendFile).toHaveBeenCalledWith('/Users/matthewhouse/dev/CodeRace/controllers/participants.json', jasmine.any(String));
+
     });
 
   });
