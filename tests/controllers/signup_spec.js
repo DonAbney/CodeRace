@@ -1,5 +1,5 @@
 var getSignup = require('../../controllers/getSignup');
-var doSignup = require('../../controllers/doSignup')
+var submitSignup = require('../../controllers/submitSignup')
 
 describe('Signup: ', function() {
 
@@ -18,7 +18,7 @@ describe('Signup: ', function() {
 
   });
 
-  describe('DO', function() {
+  describe('submit', function() {
     it('replies to request with the success page', function() {
       var req, res, spy;
       req = {};

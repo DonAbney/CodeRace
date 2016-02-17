@@ -13,4 +13,4 @@ function submitSignup(req, res) {
 
 }
 
-module.exports = doSignup;
+module.exports = submitSignup;
