@@ -21,7 +21,7 @@ describe('Signup: ', function() {
   describe('submit', function() {
     it('replies to request with the success page', function() {
       var req, res, spy;
-      req = {"body":{"name":"numfiver","email":"five@email2"}};
+      req = {"params":{"name":"numfiver","email":"five@email2"}};
       res = {sendFile: function(){}};
       spyOn(res, 'sendFile');
 
@@ -33,7 +33,7 @@ describe('Signup: ', function() {
     it('appends racer data to the participants file', function(){
       var req, res, spy;
       fs = require('fs');
-      req = {"body":{"name":"numfiver","email":"five@email2"}};
+      req = {"params":{"name":"numfiver","email":"five@email2"}};
       res = {sendFile: function(){}};
       spyOn(fs, 'appendFile');
 
