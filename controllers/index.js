@@ -4,6 +4,6 @@ router = express.Router()
 router.use('/signup', require('./signupRouter'))
 router.use('/leaderboard', require('./leaderboardRouter'))
 router.use('/', require('./leaderboardRouter'))
-router.use('/success', require('./submitSignupRouter'))
+router.use('/submitSignup', require('./submitSignupRouter'))
 
 module.exports = router

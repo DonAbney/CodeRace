@@ -14,13 +14,22 @@
     <img id="coderace-title-img" src="/img/coderace-title.png" />
   </div>
   <div class="form_data">
-    <form name="signup" action="http://192.168.128.109:8081/submitSignup" method="post">
+    <form name="signup" action="http://localhost:8081/submitSignup" method="post">
       <br>
       <input class="text_box" type="text" name="name" placeholder="NAME" required>
       <input class="text_box" type="text" name="email" placeholder="EMAIL" required>
       <input class="text_box" type="text" name="screenName" placeholder="SCREEN NAME" maxlength="10" required>
 
-      <input class="text_box" type="text" name="racer" value="racer2" hidden>
+
+      <label for="racer">Lane Number: </label>
+      <select class="form-control" id="racer">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
       <br>
       <br>
       <button type="submit" style="border: 0; background: transparent; margin: 0px 3px 0px 0px">
