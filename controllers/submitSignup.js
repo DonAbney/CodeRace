@@ -12,7 +12,7 @@ function submitSignup(req, res) {
       'x-sent': true
     }
   };
-  console.log(req);
+  
   var person = JSON.stringify({racer: {name: req.params.name, email: req.params.email}});
 
   fs.appendFile(__dirname + "/" + "participants.json", person);
