@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
+var path = require("path")
 
 
 function submitSignup(req, res) {
@@ -12,10 +13,10 @@ function submitSignup(req, res) {
       'x-sent': true
     }
   };
-  
+
   var person = JSON.stringify({racer: {name: req.params.name, email: req.params.email}});
 
-  fs.appendFile(__dirname + "/" + "participants.json", person);
+  fs.appendFile(path.join(__dirname, '..', 'participants.json'), person);
   res.sendFile('success.html', options);
 
 

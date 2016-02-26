@@ -39,7 +39,7 @@ describe('Signup: ', function() {
 
       submitSignup(req, res);
 
-      expect(fs.appendFile).toHaveBeenCalledWith('/Users/matthewhouse/dev/CodeRace/controllers/participants.json', jasmine.any(String));
+      expect(fs.appendFile).toHaveBeenCalledWith('/Users/matthewhouse/dev/CodeRace/participants.json', jasmine.any(String));
 
     });
 
