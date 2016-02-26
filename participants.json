@@ -23,5 +23,16 @@
     "name": "infinity",
     "email": "figure@eight"
   }
+} {
+  "racer": {
+    "name": "numfiver",
+    "email": "five@email2"
+  }
+} {
+  "racer": {
+    "name": "numfiver",
+    "email": "five@email2"
+  }
+} {
+  "racer": {}
 }
-{"racer":{"name":"numfiver","email":"five@email2"}}{"racer":{"name":"numfiver","email":"five@email2"}}
