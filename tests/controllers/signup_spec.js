@@ -20,12 +20,12 @@ describe('Signup: ', function() {
 
   });
 
-  describe('submit', function() {
+  describe('POST', function() {
     it('replies to request with the success page', function() {
       var req, res;
       fs = require('fs');
       req = {
-        "params": {
+        "body": {
           "name": "numfiver",
           "email": "five@email2"
 
@@ -46,7 +46,7 @@ describe('Signup: ', function() {
       var req, res;
       fs = require('fs');
       req = {
-        "params": {
+        "body": {
           "name": "numfiver",
           "email": "five@email2"
         }
@@ -60,6 +60,27 @@ describe('Signup: ', function() {
 
       expect(fs.appendFile).toHaveBeenCalledWith('/Users/matthewhouse/dev/CodeRace/participants.json', jasmine.any(String));
     });
+
+    it('calls the necessary methods in participants', function() {
+      fs = require('fs')
+      participants = {
+        newRacer: function() {}
+      };
+      var res = {
+        sendFile: function() {}
+      };
+      var req = {
+        "body": {
+          "name": "numfiver",
+          "email": "five@email2"
+        }
+      };
+      spyOn(fs, 'appendFile');
+      spyOn(participants, 'newRacer');
+      submitSignup(req, res);
+
+      expect(participants.newRacer).toHaveBeenCalledWith(req);
+    })
 
   });
 
