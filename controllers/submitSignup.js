@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
-var path = require("path")
+var path = require("path");
+var participants = require('../models/participants');
 
 function submitSignup(req, res) {
   var options = {
@@ -12,9 +13,9 @@ function submitSignup(req, res) {
       'x-sent': true
     }
   };
-  var person = JSON.stringify({racer: {name: req.body.name, email: req.body.email}});
 
-  fs.appendFile(path.join(__dirname, '..', 'participants.json'), person);
+  //fs.appendFile(path.join(__dirname, '..', 'participants.json'), person);
+  participants.newRacer(req);
   res.sendFile('success.html', options);
 
 
