@@ -43,28 +43,9 @@ describe('Signup: ', function() {
       expect(res.sendFile).toHaveBeenCalledWith('success.html', jasmine.any(Object));
     });
 
-    xit('appends racer data to the participants file', function() {
-      var req, res;
-      fs = require('fs');
-      req = {
-        "body": {
-          "name": "numfiver",
-          "email": "five@email2"
-        }
-      };
-      res = {
-        sendFile: function() {}
-      };
-      spyOn(fs, 'appendFile');
-
-      submitSignup(req, res);
-
-      expect(fs.appendFile).toHaveBeenCalledWith('/Users/matthewhouse/dev/CodeRace/participants.json', jasmine.any(String));
-    });
-
     it('calls the necessary methods in participants', function() {
       fs = require('fs')
-      
+
       var res = {
         sendFile: function() {}
       };

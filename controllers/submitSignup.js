@@ -14,8 +14,7 @@ function submitSignup(req, res) {
     }
   };
 
-  //fs.appendFile(path.join(__dirname, '..', 'participants.json'), person);
-  participants.newRacer(req);
+  participants.newRacer(req)
   res.sendFile('success.html', options);
 
 
