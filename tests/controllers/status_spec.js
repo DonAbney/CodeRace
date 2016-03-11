@@ -9,11 +9,13 @@ describe('Status: ', function() {
       var req,res,spy;
       req = res = {};
       var race = new Race();
-      spyOn(race, 'getStatus');
+      var testRaceStatus = {test: 'test'}
+      spyOn(race, 'getStatus').andReturn(testRaceStatus);
 
-      race.getStatus(req, res);
+      var actualRaceStatus = race.getStatus(req, res);
 
       expect(race.getStatus).toHaveBeenCalledWith(jasmine.any(Object), jasmine.any(Object));
+      expect(testRaceStatus).toEqual(actualRaceStatus);
     });
 
   });
