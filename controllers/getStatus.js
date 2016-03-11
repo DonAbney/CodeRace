@@ -4,9 +4,8 @@ function getStatus(req, res) {
 
   var race = new Race();
 
-  race.getStatus(function(err, raceStatus){
-    res.end(raceStatus);
-  });
+  var raceStatus = race.getStatus();
+  res.end(raceStatus);
 
 }
 
