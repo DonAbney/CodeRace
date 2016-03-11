@@ -23,5 +23,12 @@ describe('Participants: ', function() {
       expect(fs.appendFile).toHaveBeenCalledWith(jasmine.any(String), person);
     });
 
+    xit('updates the racer screen name based off of racer number', function(){
+      /*
+
+      */
+      //expect(fs.readFile).toHaveBeenCalledWith(jasmine.any(String), );
+    });
+
   });
 });

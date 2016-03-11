@@ -1,6 +1,7 @@
 var fs = require("fs");
+var Race = function() {};
 
-exports.getStatus = function(callback){
+Race.prototype.getRaceData = function(callback) {
 
   var fileName = __dirname + '/race.json';
 
@@ -9,4 +10,16 @@ exports.getStatus = function(callback){
     callback(null,{});
   });
 
-};
+  return {junk: 'junk'};
+
+}
+
+Race.prototype.getStatus = function (callback) {
+  if (!raceData) {
+    raceData = this.getRaceData(null);
+  }
+
+  return raceData;
+}
+
+module.exports = Race;

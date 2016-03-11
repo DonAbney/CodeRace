@@ -1,4 +1,5 @@
 var getStatus = require('../../controllers/getStatus');
+var Race = require('../../models/race');
 
 describe('Status: ', function() {
 
@@ -7,12 +8,12 @@ describe('Status: ', function() {
     it('replies to requests with the race status data', function(){
       var req,res,spy;
       req = res = {};
-      Race = require('../../models/race');
-      spyOn(Race, 'getStatus');
+      var race = new Race();
+      spyOn(race, 'getStatus');
 
-      getStatus(req, res);
+      race.getStatus(req, res);
 
-      expect(Race.getStatus).toHaveBeenCalledWith(jasmine.any(Function));
+      expect(race.getStatus).toHaveBeenCalledWith(jasmine.any(Object), jasmine.any(Object));
     });
 
   });
