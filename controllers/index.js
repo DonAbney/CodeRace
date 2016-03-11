@@ -5,5 +5,6 @@ router.use('/signup', require('./signupRouter'))
 router.use('/leaderboard', require('./leaderboardRouter'))
 router.use('/', require('./leaderboardRouter'))
 router.use('/submitSignup', require('./submitSignupRouter'))
+router.use('/status', require('./getStatus'))
 
 module.exports = router

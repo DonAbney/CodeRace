@@ -5,7 +5,7 @@ function getStatus(req, res) {
   var race = new Race();
 
   var raceStatus = race.getStatus();
-  res.end(raceStatus);
+  res.end(JSON.stringify(raceStatus));
 
 }
 

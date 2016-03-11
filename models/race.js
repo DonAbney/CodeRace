@@ -1,22 +1,22 @@
 var fs = require("fs");
 var Race = function() {};
 
-Race.prototype.getRaceData = function(callback) {
+var raceData;
+
+Race.prototype.getRaceData = function() {
 
   var fileName = __dirname + '/race.json';
 
   fs.readFile( fileName, 'utf8', function (err, data) {
     data = JSON.parse( data );
-    callback(null,{});
+    return data;
   });
-
-  return {junk: 'junk'};
 
 }
 
-Race.prototype.getStatus = function (callback) {
+Race.prototype.getStatus = function () {
   if (!raceData) {
-    raceData = this.getRaceData(null);
+    raceData = this.getRaceData();
   }
 
   return raceData;

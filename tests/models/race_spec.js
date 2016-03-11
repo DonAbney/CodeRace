@@ -13,7 +13,7 @@ describe('Race: ', function() {
     it('returns race data if it exists', function(){
       raceData = {test: 'Test'};
       var callback = function(){};
-      var actualRaceData = race.getStatus(callback);
+      var actualRaceData = race.getStatus();
       expect(actualRaceData).toEqual(raceData);
     });
 
@@ -23,7 +23,7 @@ describe('Race: ', function() {
       var callback = function(){};
       spyOn(race, 'getRaceData').andReturn(raceTestData);
 
-      var actualRaceData = race.getStatus(callback);
+      var actualRaceData = race.getStatus();
 
       expect(race.getRaceData).toHaveBeenCalled();
       expect(actualRaceData).toEqual(raceTestData);
@@ -38,9 +38,10 @@ describe('Race: ', function() {
       var callback = function(){};
       spyOn(fs, 'readFile');
 
-      race.getRaceData(callback);
+      race.getRaceData();
 
       expect(fs.readFile).toHaveBeenCalledWith(jasmine.any(String), 'utf8', jasmine.any(Function));
+
     });
 
   });
