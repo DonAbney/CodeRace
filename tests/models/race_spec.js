@@ -11,22 +11,21 @@ describe('Race: ', function() {
   describe('getStatus ', function() {
 
     it('returns race data if it exists', function(){
-      raceData = {test: 'Test'};
+      global.raceData = {test: 'Test'};
       var callback = function(){};
       var actualRaceData = race.getStatus();
       expect(actualRaceData).toEqual(raceData);
     });
 
     it('gets the race data from the file if it does not exist', function(){
-      raceData = null;
+      global.raceData = undefined;
       var raceTestData = {test: 'Test'};
       var callback = function(){};
       spyOn(race, 'getRaceData').andReturn(raceTestData);
 
-      var actualRaceData = race.getStatus();
+      race.getStatus();
 
       expect(race.getRaceData).toHaveBeenCalled();
-      expect(actualRaceData).toEqual(raceTestData);
     });
 
   });

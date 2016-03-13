@@ -1,25 +1,23 @@
 var fs = require("fs");
 var Race = function() {};
 
-var raceData;
-
 Race.prototype.getRaceData = function() {
 
   var fileName = __dirname + '/race.json';
 
   fs.readFile( fileName, 'utf8', function (err, data) {
     data = JSON.parse( data );
-    return data;
+    global.raceData = data;
   });
 
 }
 
 Race.prototype.getStatus = function () {
-  if (!raceData) {
-    raceData = this.getRaceData();
+  if (!global.raceData) {
+    this.getRaceData();
   }
 
-  return raceData;
+  return global.raceData;
 }
 
 module.exports = Race;
