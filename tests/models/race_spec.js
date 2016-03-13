@@ -19,7 +19,6 @@ describe('Race: ', function() {
 
     it('gets the race data from the file if it does not exist', function(){
       global.raceData = undefined;
-      var callback = function(){};
       spyOn(race, 'getRaceData');
 
       race.getStatus();
