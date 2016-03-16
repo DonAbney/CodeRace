@@ -43,4 +43,18 @@ describe('Race: ', function() {
 
   });
 
+  describe('writeRaceData', function(){
+
+    it('Writes the racer data to the race.json file', function(){
+      global.raceData = {test: 'Test'};
+      fs = require("fs");
+      spyOn(fs, 'writeFile');
+
+      race.writeRaceData();
+
+      expect(fs.writeFile).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(String));
+    });
+
+  });
+
 });

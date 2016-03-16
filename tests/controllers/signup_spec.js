@@ -60,7 +60,11 @@ describe('Signup: ', function() {
       submitSignup(req, res);
 
       expect(participants.newRacer).toHaveBeenCalledWith(req);
-    })
+    });
+
+    it('Calls the necessary methods in race.js', function() {
+      // DO Stuff
+    });
 
   });
 
