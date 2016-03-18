@@ -24,7 +24,6 @@ describe('Signup: ', function() {
   describe('POST', function() {
     it('replies to request with the success page', function() {
       var req, res;
-      fs = require('fs');
       req = {
         "body": {
           "name": "numfiver",
@@ -35,7 +34,6 @@ describe('Signup: ', function() {
       res = {
         sendFile: function() {}
       };
-      spyOn(fs, 'appendFile');
       spyOn(res, 'sendFile');
 
       submitSignup(req, res);
@@ -44,8 +42,6 @@ describe('Signup: ', function() {
     });
 
     it('calls the necessary methods in participants', function() {
-      fs = require('fs')
-
       var res = {
         sendFile: function() {}
       };
@@ -55,7 +51,7 @@ describe('Signup: ', function() {
           "email": "five@email2"
         }
       };
-      spyOn(fs, 'appendFile');
+
       spyOn(participants, 'newRacer');
       submitSignup(req, res);
 

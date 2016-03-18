@@ -1,7 +1,4 @@
-var express = require('express');
-var app = express();
-var fs = require("fs");
-var path = require("path");
+
 var participants = require('../models/participants');
 
 function submitSignup(req, res) {
