@@ -36,7 +36,7 @@ describe('Signup: ', function() {
         sendFile: function() {}
       };
       spyOn(Participants.prototype, 'newRacer');
-      spyOn(Race.prototype, 'setRaceData');
+      spyOn(Race.prototype, 'setRacerInfo');
       spyOn(res, 'sendFile');
 
       submitSignup(req, res);
@@ -56,12 +56,12 @@ describe('Signup: ', function() {
       };
 
       spyOn(Participants.prototype, 'newRacer');
-      spyOn(Race.prototype, 'setRaceData');
+      spyOn(Race.prototype, 'setRacerInfo');
 
       submitSignup(req, res);
 
       expect(Participants.prototype.newRacer).toHaveBeenCalledWith(req);
-      expect(Race.prototype.setRaceData).toHaveBeenCalledWith(req);
+      expect(Race.prototype.setRacerInfo).toHaveBeenCalledWith(req);
     });
 
   });

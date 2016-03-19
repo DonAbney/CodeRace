@@ -14,7 +14,7 @@ function submitSignup(req, res) {
     }
   };
 
-  race.setRaceData(req);
+  race.setRacerInfo(req);
   participants.newRacer(req);
   res.sendFile('success.html', options);
 

@@ -43,7 +43,7 @@ describe('Race: ', function() {
 
   });
 
-  describe('setRaceData', function(){
+  describe('setRacerInfo', function(){
 
     it('Updates the racer data and writes to the race.json file', function(){
       global.raceData = {
@@ -68,7 +68,7 @@ describe('Race: ', function() {
       fs = require("fs");
       spyOn(fs, 'writeFile');
 
-      race.setRaceData(req);
+      race.setRacerInfo(req);
 
       expect(global.raceData.racer1.screenName).toEqual(req.body.screenName);
       expect(fs.writeFile).toHaveBeenCalledWith(jasmine.any(String), JSON.stringify(global.raceData));
