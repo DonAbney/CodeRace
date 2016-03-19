@@ -18,7 +18,7 @@ $(document).ready(function() {
 	  percWidth = 30;
 	}
 
-	$("#" + index).text(racer.name + ' ' + percComplete + '%');
+	$("#" + index).text(racer.screenName + ' ' + percComplete + '%');
         $('#' + index + 'cover').css('left', percWidth + '%');
         $('#' + index + 'cover').width((100 - percWidth) + '%');
 
