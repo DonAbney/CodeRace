@@ -1,6 +1,7 @@
 var getSignup = require('../../controllers/getSignup');
 var submitSignup = require('../../controllers/submitSignup');
-var participants = require('../../models/participants');
+var Participants = require('../../models/participants');
+var Race = require('../../models/race');
 
 describe('Signup: ', function() {
 
@@ -34,6 +35,8 @@ describe('Signup: ', function() {
       res = {
         sendFile: function() {}
       };
+      spyOn(Participants.prototype, 'newRacer');
+      spyOn(Race.prototype, 'setRaceData');
       spyOn(res, 'sendFile');
 
       submitSignup(req, res);
@@ -41,7 +44,7 @@ describe('Signup: ', function() {
       expect(res.sendFile).toHaveBeenCalledWith('success.html', jasmine.any(Object));
     });
 
-    it('calls the necessary methods in participants', function() {
+    it('calls the necessary methods in participants and race', function() {
       var res = {
         sendFile: function() {}
       };
@@ -52,14 +55,13 @@ describe('Signup: ', function() {
         }
       };
 
-      spyOn(participants, 'newRacer');
+      spyOn(Participants.prototype, 'newRacer');
+      spyOn(Race.prototype, 'setRaceData');
+
       submitSignup(req, res);
 
-      expect(participants.newRacer).toHaveBeenCalledWith(req);
-    });
-
-    it('Calls the necessary methods in race.js', function() {
-      // DO Stuff
+      expect(Participants.prototype.newRacer).toHaveBeenCalledWith(req);
+      expect(Race.prototype.setRaceData).toHaveBeenCalledWith(req);
     });
 
   });

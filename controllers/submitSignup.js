@@ -1,7 +1,10 @@
-
-var participants = require('../models/participants');
+var Race = require('../models/race');
+var Participants = require('../models/participants');
 
 function submitSignup(req, res) {
+  var participants = new Participants();
+  var race = new Race();
+
   var options = {
     root: './views/',
     dotfiles: 'deny',
@@ -11,7 +14,8 @@ function submitSignup(req, res) {
     }
   };
 
-  participants.newRacer(req)
+  race.setRaceData(req);
+  participants.newRacer(req);
   res.sendFile('success.html', options);
 
 

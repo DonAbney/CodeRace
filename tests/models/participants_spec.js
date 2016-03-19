@@ -5,6 +5,8 @@ describe('Participants: ', function() {
   describe('newRacer ', function() {
 
     it('appends racer data to the participants file', function() {
+
+      var participants = new Participants();
       var req;
       fs = require('fs');
       req = {
@@ -18,11 +20,11 @@ describe('Participants: ', function() {
 
       spyOn(fs, 'appendFile');
 
-      Participants.newRacer(req);
+      participants.newRacer(req);
 
       expect(fs.appendFile).toHaveBeenCalledWith(jasmine.any(String), person);
     });
 
   });
-  
+
 });

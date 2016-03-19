@@ -20,7 +20,9 @@ Race.prototype.getStatus = function () {
   return global.raceData;
 }
 
-Race.prototype.writeRaceData = function() {
+Race.prototype.setRaceData = function(req) {
+
+  global.raceData[req.body.racer].screenName = req.body.screenName;
   fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(global.raceData));
 }
 

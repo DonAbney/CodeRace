@@ -43,16 +43,35 @@ describe('Race: ', function() {
 
   });
 
-  describe('writeRaceData', function(){
+  describe('setRaceData', function(){
 
-    it('Writes the racer data to the race.json file', function(){
-      global.raceData = {test: 'Test'};
+    it('Updates the racer data and writes to the race.json file', function(){
+      global.raceData = {
+        "racer1": {
+          "screenName": "RacerBeforeTest",
+          "percent": 10
+        },
+        "racer2": {
+          "screenName": "Racer2BeforeTest",
+          "percent": 20
+        }
+      };
+
+      var req = {
+        "body": {
+          "racer": "racer1",
+          "screenName": "RacerAfterTest",
+          "email": "test@test.com"
+        }
+      };
+
       fs = require("fs");
       spyOn(fs, 'writeFile');
 
-      race.writeRaceData();
+      race.setRaceData(req);
 
-      expect(fs.writeFile).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(String));
+      expect(global.raceData.racer1.screenName).toEqual(req.body.screenName);
+      expect(fs.writeFile).toHaveBeenCalledWith(jasmine.any(String), JSON.stringify(global.raceData));
     });
 
   });
