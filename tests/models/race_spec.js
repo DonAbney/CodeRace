@@ -49,11 +49,11 @@ describe('Race: ', function() {
       global.raceData = {
         "racer1": {
           "screenName": "RacerBeforeTest",
-          "percent": 10
+          "percentage": 10
         },
         "racer2": {
           "screenName": "Racer2BeforeTest",
-          "percent": 20
+          "percentage": 20
         }
       };
 
@@ -71,6 +71,38 @@ describe('Race: ', function() {
       race.setRacerInfo(req);
 
       expect(global.raceData.racer1.screenName).toEqual(req.body.screenName);
+      expect(fs.writeFile).toHaveBeenCalledWith(jasmine.any(String), JSON.stringify(global.raceData));
+    });
+
+  });
+
+  describe('setRacerProgress', function(){
+
+    it('Updates the racer progress and writes to the race.json file', function(){
+      global.raceData = {
+        "racer1": {
+          "screenName": "RacerBeforeTest",
+          "percentage": 10
+        },
+        "racer2": {
+          "screenName": "Racer2BeforeTest",
+          "percentage": 20
+        }
+      };
+
+      var req = {
+        "params": {
+          "racer": "racer1",
+          "percentage": 40
+        }
+      };
+
+      fs = require("fs");
+      spyOn(fs, 'writeFile');
+
+      race.setRacerProgress(req);
+
+      expect(global.raceData.racer1.percentage).toEqual(req.params.percentage);
       expect(fs.writeFile).toHaveBeenCalledWith(jasmine.any(String), JSON.stringify(global.raceData));
     });
 

@@ -26,4 +26,10 @@ Race.prototype.setRacerInfo = function(req) {
   fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(global.raceData));
 }
 
+Race.prototype.setRacerProgress = function(req) {
+
+  global.raceData[req.params.racer].percentage = req.params.percentage;
+  fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(global.raceData));
+}
+
 module.exports = Race;
