@@ -12,7 +12,7 @@ describe('Race: ', function() {
 
     it('returns race data if it exists', function(){
       global.raceData = {test: 'Test'};
-      var callback = function(){};
+      // var callback = function(){};
       var actualRaceData = race.getStatus();
       expect(actualRaceData).toEqual(raceData);
     });
@@ -23,7 +23,7 @@ describe('Race: ', function() {
 
       race.getStatus();
 
-      expect(race.getRaceData).toHaveBeenCalled();
+      expect(race.getRaceData).toHaveBeenCalledWith(jasmine.any(Function));
     });
 
   });
@@ -32,10 +32,12 @@ describe('Race: ', function() {
 
     it('reads the race data',function(){
       fs = require("fs");
-      var callback = function(){};
+      var callback = function(){
+
+      };
       spyOn(fs, 'readFile');
 
-      race.getRaceData();
+      race.getRaceData(callback);
 
       expect(fs.readFile).toHaveBeenCalledWith(jasmine.any(String), 'utf8', jasmine.any(Function));
 
@@ -59,7 +61,7 @@ describe('Race: ', function() {
 
       var req = {
         "body": {
-          "racer": "racer1",
+          "racer": "1",
           "screenName": "RacerAfterTest",
           "email": "test@test.com"
         }
@@ -72,6 +74,34 @@ describe('Race: ', function() {
 
       expect(global.raceData.racer1.screenName).toEqual(req.body.screenName);
       expect(fs.writeFile).toHaveBeenCalledWith(jasmine.any(String), JSON.stringify(global.raceData));
+    });
+
+    it('Reads the raceData from the race.json file if the global is empty', function() {
+      global.raceData = undefined;
+
+      var req = {
+        "body": {
+          "racer": "1",
+          "screenName": "RacerAfterTest",
+          "email": "test@test.com"
+        }
+      };
+
+      fs = require("fs");
+      spyOn(fs, 'writeFile');
+      spyOn(Race.prototype, 'getRaceData').andCallFake(function() {
+        global.raceData = {
+           "racer1" : {
+              "screenName": "racer1",
+              "percent" : 0
+           }
+         };
+      });
+
+      race.setRacerInfo(req);
+
+      expect(Race.prototype.getRaceData).toHaveBeenCalled();
+
     });
 
   });
