@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.13.3",
-    "body-parser": "^1.15.0"
+    "body-parser": "^1.15.0",
+    "dotenv":"^2.0.0"
   },
   "scripts": {
     "test": "jasmine-node --color --autotest tests --watch controllers models",
