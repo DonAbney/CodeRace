@@ -3,4 +3,5 @@
 node_modules
 npm-debug.log
 models/participants.json
+models/race.json
 .env

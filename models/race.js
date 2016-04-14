@@ -1,8 +1,6 @@
 var fs = require("fs");
 var Race = function() {};
-require('dotenv').config();
 
-var racerNumber = process.env.RACER;
 
 Race.prototype.getRaceData = function(callback, req) {
 
@@ -37,7 +35,7 @@ Race.prototype.setRacerInfo = function(req) {
 }
 
 Race.prototype.persistRacerInfo = function(req) {
-  global.raceData['racer' + racerNumber].screenName = req.body.screenName;
+  global.raceData['racer' + req.body.racer].screenName = req.body.screenName;
   fs.writeFile( __dirname + "/" + "race.json", JSON.stringify(global.raceData));
 }
 
