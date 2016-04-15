@@ -3,6 +3,7 @@ $(document).ready(function() {
 
   function refreshRace() {
     $.ajax({
+      // Update IP
       url: "http://localhost:8081/status",
       crossDomain: true
     }).then(function(data) {
