@@ -18,6 +18,10 @@ $(document).ready(function() {
 	  percWidth = 30;
 	}
 
+  if (typeof percComplete == 'undefined') {
+    percComplete = 0;
+  }
+
 	$("#" + index).text(racer.screenName + ' ' + percComplete + '%');
         $('#' + index + 'cover').css('left', percWidth + '%');
         $('#' + index + 'cover').width((100 - percWidth) + '%');
