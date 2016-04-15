@@ -11,8 +11,8 @@ $(document).ready(function() {
 
       var racers = $.parseJSON(data);
       $.each(racers, function(index, racer) {
-	var percComplete = racer.percent;
-	var percWidth = parseInt(racer.percent);
+	var percComplete = racer.percentage;
+	var percWidth = parseInt(racer.percentage);
 
 	if (percWidth < 30) {
 	  percWidth = 30;

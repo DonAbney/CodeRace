@@ -45,7 +45,7 @@ var parseFile = function(fileName, stuff) {
 
 var setOptions = function() {
   options = {
-    host: '192.168.1.102',
+    host: 'localhost',
     path: '/percent/' + racerNum + '/' + percentage,
     port: 8081,
     method: 'PUT'
