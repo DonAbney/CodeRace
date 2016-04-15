@@ -1,0 +1,22 @@
+defaultTasks 'clean', 'test'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+test {
+    testLogging {
+	exceptionFormat = 'full'
+    }
+    exclude '**/accept/*'
+}
+
+task accept (type:Test) {
+    include '**/accept/*'
+}
