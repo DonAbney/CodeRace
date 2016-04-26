@@ -13,17 +13,16 @@ dependencies {
   testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
 }
 
-task accept(type:Test) {
-    include 'kataBattle/e2e/**'
-}
-
 test {
     testLogging {
-        exceptionFormat = 'full'
+      exceptionFormat = 'full'
     }
-    exclude 'kataBattle/e2e/**'
+    exclude '**/accept/*'
 }
 
+task accept (type:Test) {
+    include '**/accept/*'
+}
 task viewResults(type:Exec) {
     commandLine 'open', '/Users/DonAbney/Dev/kataBattle1/build/reports/tests/index.html'
 }

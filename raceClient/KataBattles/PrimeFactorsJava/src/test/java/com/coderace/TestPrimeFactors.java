@@ -13,5 +13,4 @@ public class TestPrimeFactors {
         assertEquals(Arrays.asList(), generator.generate(1));
     }
 
-
 }
