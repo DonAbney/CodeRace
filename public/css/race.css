@@ -2,8 +2,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    background: url('/img/background_with_light.png');
+    background: url('/img/whole_background.png');
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .texture-overlay {
@@ -13,24 +14,71 @@ body {
 
 .texture-overlay img{
 	width: 100%;
-    height: 100%;
+  height: 100%;
 }
 
 .racer {
     margin: 0;
-    padding: 0  0 0 20px;
+    padding: 0  0 0 1%;
     border: none;
-    width: calc(100% - 20px);
+    width: 20%;
     height: 150px;
     line-height: 150px;
     font-family: Arial;
     font-size: 45px;
     color: white;
     text-align: left;
+
+}
+
+#lane1 {
+  background: url('../img/Clown1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+#lane2 {
+  background: url('../img/Clown2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+#lane3 {
+  background: url('../img/Clown3.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+#lane4 {
+  background: url('../img/Clown4.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+#lane5 {
+  background: url('../img/Clown5.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  /*animation: wobble 10s infinite;*/
+}
+
+.racer-icon {
+  margin: 0;
+  padding: 0  0 0 0%;
+  border: none;
+  width: 70%;
+  height: 150px;
+  line-height: 150px;
+  text-align: left;
+  display: inline;
 }
 
 .header {
-    height: 160px;
+    height: 195px;
     width: 100%;
     padding: 40px 0 20px 0;
     font-size: 45px;
@@ -50,9 +98,16 @@ body {
 }
 
 .lane {
-    height: 150px;
+    height: 155px;
     width: 100%;
-
     position: relative;
+}
 
+@keyframes wobble {
+   15% { transform: translateY(-25%) rotate(-5deg); }
+   30% { transform: translateY(20%) rotate(3deg); }
+   45% { transform: translateY(-15%) rotate(-3deg); }
+   60% { transform: translateY(10%) rotate(2deg); }
+   75% { transform: translateY(-5%) rotate(-1deg); }
+   100% { transform: translateY(0%); }
 }
