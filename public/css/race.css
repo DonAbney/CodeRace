@@ -3,7 +3,7 @@ body {
     padding: 0;
     background-color: black;
     background: url('/img/whole_background.png');
-    background-size: 100%;
+    background-size: 100% 112%;
     background-repeat: no-repeat;
 }
 
@@ -78,7 +78,7 @@ body {
 }
 
 .header {
-    height: 195px;
+    height: 125px;
     width: 100%;
     padding: 40px 0 20px 0;
     font-size: 45px;
