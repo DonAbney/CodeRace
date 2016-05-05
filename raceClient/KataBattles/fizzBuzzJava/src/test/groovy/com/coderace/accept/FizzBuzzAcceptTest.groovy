@@ -1,4 +1,4 @@
-package kataBattle.e2e.fizzbuzz
+package com.coderace.accept
 
 import kataBattle.fizzbuzz.*
 import spock.lang.*

@@ -15,8 +15,8 @@ $(document).ready(function() {
 	var percComplete = racer.percentage;
 	var percWidth = parseInt(racer.percentage);
 
-	if (percWidth < 18) {
-	  percWidth = 18;
+	if (percWidth < 15) {
+	  percWidth = 15;
 	}
 
   if (typeof percComplete == 'undefined') {
