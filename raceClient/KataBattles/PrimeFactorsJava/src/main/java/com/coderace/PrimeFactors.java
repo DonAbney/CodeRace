@@ -12,7 +12,7 @@ import java.util.List;
 public class PrimeFactors {
     public List<Integer> generate(int number) {
         ArrayList<Integer> primeFactors = new ArrayList<>();
-        primeFactors.add(null);
+        primeFactors.add(1);
         return primeFactors;
     }
 }
