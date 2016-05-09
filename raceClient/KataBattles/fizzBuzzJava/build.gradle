@@ -35,7 +35,7 @@ task report << {
     html.'**'.findAll{it.@class == 'percent'}.each{
 	println ('Acceptance tests are ' + it + ' complete')
 	def number = it.toString().replaceAll('%','')
-	println (['curl', '-X', 'PUT', "http://192.168.1.100:8081/percent/${racer}/${number}"].execute().text)
+	println (['curl', '-X', 'PUT', "http://localhost:8081/percent/${racer}/${number}"].execute().text)
     }
 }
 
