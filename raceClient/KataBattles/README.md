@@ -1,6 +1,16 @@
 # CodeRace Starter Katas
 Files for CodeRace Kata Battles
 
+## Setup
+
+1. Edit `raceProgressPoster.js` to use the correct IP address.
+
+```sh
+npm install
+npm install -g karma
+mkdir -p ~/race
+```
+
 ## Kata Descriptions
 Brief kata descriptions are provided below for convenience, as the laptops that the kata battles are taking place on are on a private network that is not connected to the internet and the katas may have been modified slightly to facilitate their use during the code battle.
 
