@@ -2,9 +2,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    background: url('/img/whole_background.png');
-    background-size: 100% 113%;
-    background-repeat: no-repeat;
+    background: url('/img/coderace_background_notexture.png');
+    background-size: 100%;
 }
 
 .texture-overlay {
@@ -14,71 +13,24 @@ body {
 
 .texture-overlay img{
 	width: 100%;
-  height: 100%;
+    height: 100%;
 }
 
 .racer {
     margin: 0;
-    padding: 0  0 0 1%;
+    padding: 0  0 0 20px;
     border: none;
-    width: 20%;
+    width: calc(100% - 20px);
     height: 150px;
     line-height: 150px;
     font-family: Arial;
     font-size: 45px;
     color: white;
     text-align: left;
-
-}
-
-#lane1 {
-  background: url('../img/Clown1.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-
-#lane2 {
-  background: url('../img/Clown2.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-
-}
-
-#lane3 {
-  background: url('../img/Clown3.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-
-}
-
-#lane4 {
-  background: url('../img/Clown4.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-
-}
-
-#lane5 {
-  background: url('../img/Clown5.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  /*animation: wobble 10s infinite;*/
-}
-
-.racer-icon {
-  margin: 0;
-  padding: 0  0 0 0%;
-  border: none;
-  width: 70%;
-  height: 150px;
-  line-height: 150px;
-  text-align: left;
-  display: inline;
 }
 
 .header {
-    height: 125px;
+    height: 160px;
     width: 100%;
     padding: 40px 0 20px 0;
     font-size: 45px;
@@ -98,16 +50,21 @@ body {
 }
 
 .lane {
-    height: 155px;
+    height: 150px;
     width: 100%;
+    background: linear-gradient(to right, red, yellow, green);
     position: relative;
+    box-shadow: inset 0 -5px 50px rgba(00,00,00,.5);
 }
 
-@keyframes wobble {
-   15% { transform: translateY(-25%) rotate(-5deg); }
-   30% { transform: translateY(20%) rotate(3deg); }
-   45% { transform: translateY(-15%) rotate(-3deg); }
-   60% { transform: translateY(10%) rotate(2deg); }
-   75% { transform: translateY(-5%) rotate(-1deg); }
-   100% { transform: translateY(0%); }
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 30%;
+    background-color: white;
+    z-index: 1;
+    top: 0;
+    -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 150px 100%);
+    box-shadow: inset 0 -5px 50px rgba(00,00,00,.5);
 }
