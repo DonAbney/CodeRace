@@ -1,4 +1,4 @@
-{
+{ 
   "name": "RomanNumeralsJS",
   "description": "rnjs",
   "devDependencies": {
@@ -12,6 +12,7 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "test": "./test.sh"
+    "test": "./test.sh",
+    "start" : "node ../../raceProgressPoster.js $RACER_NAME"
   }
 }

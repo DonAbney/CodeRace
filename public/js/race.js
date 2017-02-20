@@ -3,6 +3,7 @@ $(document).ready(function() {
 
   function refreshRace() {
     $.ajax({
+      // Update IP
       url: "http://localhost:8081/status",
       crossDomain: true
     }).then(function(data) {
@@ -14,18 +15,17 @@ $(document).ready(function() {
 	var percComplete = racer.percentage;
 	var percWidth = parseInt(racer.percentage);
 
-	if (percWidth < 30) {
-	  percWidth = 30;
+	if (percWidth < 15) {
+	  percWidth = 15;
 	}
 
   if (typeof percComplete == 'undefined') {
     percComplete = 0;
   }
 
+  racer_number = index.slice(-1);
 	$("#" + index).text(racer.screenName + ' ' + percComplete + '%');
-        $('#' + index + 'cover').css('left', percWidth + '%');
-        $('#' + index + 'cover').width((100 - percWidth) + '%');
-
+  $("#lane" + racer_number).css("background-position", percWidth + '% center');
       });
 
     });

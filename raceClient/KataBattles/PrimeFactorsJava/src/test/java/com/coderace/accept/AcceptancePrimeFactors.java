@@ -41,6 +41,11 @@ public class AcceptancePrimeFactors {
 
     @Test
     public void _9_has_prime_factors_3_and_3() {
-        assertEquals(Arrays.asList(3, 3), generator.generate(9));
+        assertEquals(Arrays.asList(3, 3), generator.generate(10));
+    }
+
+    @Test
+    public void _10_has_prime_factors_2_and_5() {
+        assertEquals(Arrays.asList(2, 5), generator.generate(9));
     }
 }
