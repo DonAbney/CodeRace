@@ -9,7 +9,7 @@ Files for CodeRace Kata Battles
 npm install
 npm install -g karma
 mkdir -p ~/race
-```
+
 
 ## Kata Descriptions
 Brief kata descriptions are provided below for convenience, as the laptops that the kata battles are taking place on are on a private network that is not connected to the internet and the katas may have been modified slightly to facilitate their use during the code battle.
